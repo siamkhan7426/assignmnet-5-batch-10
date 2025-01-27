@@ -6,17 +6,35 @@ function getInputValue (id){
 
 }
 
+
 // coin function 
 function DonateCoinvalue (id){
     return parseFloat(document.getElementById(id).innerText)
 }
-
+// innertext value function 
+function setElementValue(id, value) {
+    document.getElementById(id).innerText = value;
+}
+// show modal function 
+function showModal(id){
+    document.getElementById(id).classList.remove("hidden");
+    document.getElementById(id).classList.add("modal");
+}
+//  Hide modal function
+function hideModal (id){
+    document.getElementById(id).classList.add("hidden");
+    document.getElementById(id).classList.remove("modal")
+}
 //  error function
 function errorMessege (id){
-   document.getElementById(id).classList.remove("hidden");
+   return document.getElementById(id).classList.remove("hidden");
 }
+// Event listener for the modal close button
+document.getElementById("modal-close").addEventListener("click", function(){
+    hideModal("doantion-modal")
+})
 
-//  getIputvalue function call 
+//  getIputvalue function call noakhali
 const noakhaliBtn = document.querySelector("#Noakhali-btn").addEventListener('click', function(){
         const noakhaliInputValue = getInputValue('noakhali-input');
         const donateNukhali = DonateCoinvalue('donate-nukhali');
@@ -24,10 +42,12 @@ const noakhaliBtn = document.querySelector("#Noakhali-btn").addEventListener('cl
         if(noakhaliInputValue <=0 || isNaN(noakhaliInputValue)){
            return errorMessege('income-error')
         }
-        const totalBalance = nukhaliTotalBalacne - noakhaliInputValue;
-        const balance = document.querySelector('#donate-balance').innerText = totalBalance
-        const donateBalacne = donateNukhali + noakhaliInputValue ;
-        const donateInnerBalance = document.querySelector('#donate-nukhali').innerText = donateBalacne;
-        
-       
+        if(nukhaliTotalBalacne - noakhaliInputValue <0){
+            return alert("Invalided Balanace")
+        }
+        setElementValue("donate-balance", nukhaliTotalBalacne - noakhaliInputValue);
+        setElementValue("donate-nukhali", donateNukhali + noakhaliInputValue);
+
+        // show modal function 
+      console.log(showModal("doantion-modal"))
 })
