@@ -1,15 +1,13 @@
 
 // value Fucntion 
-
 function getInputValue (id){
     return parseFloat(document.getElementById(id).value);
-
 }
 
 
 // coin function 
 function DonateCoinvalue (id){
-    return parseFloat(document.getElementById(id).innerText)
+    return parseFloat(document.getElementById(id).innerText);
 }
 // innertext value function 
 function setElementValue(id, value) {
@@ -18,12 +16,12 @@ function setElementValue(id, value) {
 // show modal function 
 function showModal(id){
     document.getElementById(id).classList.remove("hidden");
-    document.getElementById(id).classList.add("modal");
+    document.getElementById(id).classList.add("modal-open");
 }
 //  Hide modal function
-function hideModal (id){
+function hideModal(id){
     document.getElementById(id).classList.add("hidden");
-    document.getElementById(id).classList.remove("modal")
+    document.getElementById(id).classList.remove("modal-open");
 }
 //  error function
 function errorMessege (id){
@@ -31,8 +29,8 @@ function errorMessege (id){
 }
 // Event listener for the modal close button
 document.getElementById("modal-close").addEventListener("click", function(){
-    hideModal("doantion-modal")
-})
+    hideModal("doantion-modal");
+});
 
 //  getIputvalue function call noakhali
 const noakhaliBtn = document.querySelector("#Noakhali-btn").addEventListener('click', function(){
@@ -43,11 +41,11 @@ const noakhaliBtn = document.querySelector("#Noakhali-btn").addEventListener('cl
            return errorMessege('income-error')
         }
         if(nukhaliTotalBalacne - noakhaliInputValue <0){
-            return alert("Invalided Balanace")
+            return alert("Invalid Balance");
         }
         setElementValue("donate-balance", nukhaliTotalBalacne - noakhaliInputValue);
         setElementValue("donate-nukhali", donateNukhali + noakhaliInputValue);
 
         // show modal function 
-      console.log(showModal("doantion-modal"))
-})
+        showModal("doantion-modal");
+});
