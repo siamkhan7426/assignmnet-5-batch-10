@@ -24,9 +24,9 @@
                 <span>Donate Bangladesh</span>
             </div>
             <!-- Coin Balance -->
-            <div class="flex justify-center items-center gap-2 text-lg">
+            <div  class="flex justify-center items-center gap-2 text-lg">
                 <img src="./imges/coin.png" alt="coin" class="h-6 w-6">
-                <span>5500 BDT</span>
+                <span id="donate-balance">5500 BDT</span>
             </div>
         </div>
         
@@ -49,9 +49,9 @@
                     src="./imges/noakhali.png"
                     class="w-3/4 h-auto bg-center object-cover" />
                   <div>
-                    <div class="bg-slate-200 w-2/6 flex flex-col mx-auto lg:m-0 lg:flex-row  items-center justify-center gap-2 py-2 mb-2 lg:mb-2 rounded-lg">
+                    <div  class="bg-slate-200 w-2/6 flex flex-col mx-auto lg:m-0 lg:flex-row  items-center justify-center gap-2 py-2 mb-2 lg:mb-2 rounded-lg">
                         <img src="./imges/coin.png" alt="">
-                        <span>0 BDT</span>
+                        <span id="donate-nukhali">2500 BDT</span>
                     </div>
                     <h1 class="text-xl font-bold">Donate for Flood at Noakhali, Bangladesh</h1>
                     <p class="py-6">
@@ -61,8 +61,11 @@
                     type="text"
                     id="noakhali-input"
                      placeholder="Write Donation Amount"
-                    class="input input-bordered input-md w-5/6 mb-3 " />
+                     class="input input-bordered input-md w-5/6 mb-3 " />
                 </input>
+                    <!-- error messege -->
+                     <p id="income-error" class="text-lg hidden">Invalided number</p>
+                    <!-- error messege -->
                     <button id="Noakhali-btn" class="btn text-xl font-bold text-center w-5/6  bg-[#B4F461]">Donate Now</button>
                   </div>
                 </div>
